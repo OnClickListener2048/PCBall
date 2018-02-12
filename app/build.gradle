@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 15
+        applicationId "com.andrognito.patternlockdemo"
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
+        renderscriptTargetApi 15
+        renderscriptSupportModeEnabled true
+        jackOptions {
+            enabled false
+        }
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "40440a555b60792f220281a7", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+
+    }
+
+
+
+    compileOptions {
+        targetCompatibility 1.7
+        sourceCompatibility 1.7
+    }
+}
+
+dependencies {
+    compile project(':patternlockview')
+    compile project(':patternlockview-reactive')
+    compile rootProject.ext.supportV7
+    compile 'io.reactivex.rxjava2:rxjava:2.0.3'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'cn.jiguang.sdk:jpush:3.1.1'
+    // 此处以JPush 3.1.1 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.9'
+    // 此处以JCore 1.1.9 版本为例。
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.jaeger.statusbarutil:library:1.4.0'
+    compile 'me.iwf.photopicker:PhotoPicker:0.1.8'
+    compile 'net.qiujuer.genius:blur:2.0.0-beta4'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.blankj:utilcode:1.12.5'
+    compile 'com.lzy.net:okgo:3.0.4'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    compile 'com.just.agentweb:agentweb:4.0.0-alpha-3'
+    compile 'com.google.code.gson:gson:2.2.4'
+}

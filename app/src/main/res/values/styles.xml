@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+
+    </style>
+
+    <style name="lead" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/lead</item>
+    </style>
+
+
+    <style name="FloatActivity" parent="android:style/Theme.Dialog">
+    </style>
+
+
+</resources>

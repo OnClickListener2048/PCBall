@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="header">#4169E1</color>
+
+    <color name="color_red">#FF0000</color>
+    <color name="color_gray">#DDDDDD</color>
+    <color name="color_black">#000000</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_bar_gray">#EAEAEA</color>
+    <color name="color_item_name">#555555</color>
+    <color name="color_text_price">#D45242</color>
+    <color name="line">#F0F0F0</color>
+    <color name="shop_background">#B30004</color>
+    <color name="shop_Header_background">#F2F2F2</color>
+    <color name="shop_Service_background">#FFFAF4</color>
+</resources>

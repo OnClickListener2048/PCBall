@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">海淘商城京东版</string>
+
+    <string name="msg_loading">正在加载</string>
+
+    <string name="base_title_text">海淘商城</string>
+    <!-- ME01010100_欢迎画面 -->
+    <string name="ME01010100_001">Aisaopin购物APP</string>
+
+    <!-- ME01020100_首页 -->
+    <string name="ME01020100_002">商品推荐</string>
+    <string name="ME01020100_001">服务项目</string>
+
+    <!-- ME02010100_webview显示页面 -->
+
+    <string name="ME02010100_default">default</string>
+    <string name="ME02010100_title">海淘商城</string>
+    <string name="ME02010100_001">商品检索</string>
+    <string name="ME02010100_002">网络无法连接，请确认您的网络</string>
+    <string name="ME02010100_003">官方账号</string>
+    <string name="ME02010100_004">欢迎关注我们的公众号！</string>
+    <string name="ME02010100_005">日本高岛屋</string>
+    <string name="ME02010100_006_001">URL : &#160;</string>
+    <string name="ME02010100_006_002">http://weibo.com/u/2389629452</string>
+    <string name="ME02010100_007_001">微信号 : &#160;</string>
+    <string name="ME02010100_007_002">japan_takashimaya</string>
+    <string name="ME02010100_008">上海高岛屋</string>
+    <string name="ME02010100_009_001">URL : &#160;</string>
+    <string name="ME02010100_009_002">http://weibo.com/u/3515211465</string>
+    <string name="ME02010100_010_001">微信号 : &#160;</string>
+    <string name="ME02010100_010_002">takashimayash</string>
+    <string name="ME02010100_011">我们会在此随时发布日本高岛屋的各分店的新品情报及优惠信息。</string>
+    <string name="ME02010100_012">我们会在此随时发布上海高岛屋的新品情报及优惠信息。</string>
+
+    <!-- ME03010100_二维码 -->
+    <string name="ME03010100_001">请将方框对准二维码进行扫描</string>
+
+
+    <!-- common string -->
+    <!-- 判断设备是否支持拍照功能 -->
+    <string name="common_base_dialog_button_txt1">请使用带有拍照功能的手机</string>
+    <string name="common_base_dialog_button_txt2">确认</string>
+    <!-- 判断设备是否支持闪光灯功能 -->
+    <string name="common_toast_feature">请使用支持闪光灯功能的手机</string>
+
+    <!-- 微信公众号复制对话框文言 -->
+    <string name="dialog_weixincopy_title">提示</string>
+    <string name="dialog_weixincopy_alert_message">本应用使用需要关闭本机锁屏，是否前去关闭？</string>
+    <string name="dialog_weixincopy_btn_no">残忍拒绝</string>
+    <string name="dialog_weixincopy_btn_yes">前去修改</string>
+
+    <!-- webview注意提示对话框文言 -->
+    <string name="dialog_webview_alert_title">注意</string>
+    <string name="dialog_webview_alert_message">接下来会跳转到京东(JD.com)页面。如果想回到APP首页，请点击左上角的主页图标。</string>
+    <string name="dialog_webview_alert_checkbox_text">以后不再提醒</string>
+    <string name="dialog_webview_btn_text">OK</string>
+
+    <!-- 照相机权限设定提示对话框文言 -->
+    <string name="dialog_permission_title">权限请求</string>
+    <string name="dialog_permission_alert_message">高岛屋海淘需要获取摄像头权限。\n请在设置→应用→高岛屋海淘→权限中，开启摄像头权限，以正常使用高岛屋海淘。</string>
+    <string name="dialog_permission_btn_no">取消</string>
+    <string name="dialog_permission_btn_yes">去设置</string>
+
+    <!-- 二维码无效提示对话框文言 -->
+    <string name="dialog_scan_defeat_alert_message">这是无效的二维码。\n读取的内容：</string>
+    <string name="dialog_scan_defeat_btn_text">OK</string>
+
+    <!-- ME04_UserProtocolActivity_利用规约页面 -->
+    <string name="user_protocol_btn_text">关闭</string>
+    <string name="user_protocol_title">用户协议</string>
+    <string name="user_protocol_texts_title">高岛屋海淘应用用户协议</string>
+    <string name="user_protocol_texts_content">&#160;&#160;&#160;&#160;&#160;&#160;高岛屋海淘应用（以下简称“本应用”）是由日本トランス・コスモス株式会社（transcosmos inc.）（以下简称“本公司”）运营和提供，是一款实现线下到线上购买日本高岛屋株式会社商品的链接工具。高岛屋海淘应用用户协议（以下简称“本协议”）是针对使用本应用以及本应用中提供的服务（以下简称“本服务”）的规定。\n\n</string>
+    <string name="pulltoloadmore">上拉加载更多</string>
+    <string name="request_error">访问网络成功</string>
+    <string name="request_error_pulltorefresh">加载失败，请检查网络</string>
+    <string name="request_ok">访问网络成功</string>
+    <string name="nomore">没有更多了...</string>
+    <string name="notice_detail">详细信息</string>
+
+
+</resources>

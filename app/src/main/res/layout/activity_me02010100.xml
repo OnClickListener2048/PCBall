@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <WebView
+        android:id="@+id/wv_me02010100_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"/>
+    <FrameLayout
+        android:id="@+id/fl_alpha"
+        android:layout_width="match_parent"
+        android:background="@color/color_black"
+        android:visibility="gone"
+        android:alpha="0.4"
+        android:layout_height="match_parent"></FrameLayout>
+
+</RelativeLayout>

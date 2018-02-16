@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-        <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-                <item name="colorPrimary">@color/header</item>
-                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-                <item name="colorAccent">@color/colorAccent</item>
+        <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+                <item name="colorPrimary">@color/status_bar</item>
+                <item name="colorPrimaryDark">@color/status_bar</item>
+                <item name="colorAccent">@color/status_bar</item>
                 <!--<item name="android:windowTranslucentStatus">true</item>-->
                 <!--<item name="android:activityCloseExitAnimation">@anim/activity_close</item>-->
                 <!--<item name="android:activityCloseEnterAnimation">@anim/activity_close</item>-->

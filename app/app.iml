@@ -22,7 +22,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
     <output url="file://$MODULE_DIR$/build/intermediates/classes/debug" />
     <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
     <exclude-output />
@@ -101,55 +101,43 @@
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 25 Platform (1)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="jpush-3.1.1" level="project" />
-    <orderEntry type="library" exported="" name="jcore-1.1.9" level="project" />
-    <orderEntry type="library" exported="" name="transition-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="PhotoPicker-0.1.8" level="project" />
-    <orderEntry type="library" exported="" name="blur-2.0.0-beta4" level="project" />
-    <orderEntry type="library" exported="" name="design-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="support-core-ui-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="rxandroid-2.0.1" level="project" />
-    <orderEntry type="library" exported="" name="renderscript-v8" level="project" />
-    <orderEntry type="library" exported="" name="agentweb-4.0.0-alpha-3" level="project" />
-    <orderEntry type="library" exported="" name="rxjava-2.0.3" level="project" />
-    <orderEntry type="library" exported="" name="library-1.4.0" level="project" />
-    <orderEntry type="library" exported="" name="support-core-utils-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="support-fragment-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="glide-3.6.0" level="project" />
-    <orderEntry type="library" exported="" name="reactive-streams-1.0.0" level="project" />
-    <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
-    <orderEntry type="library" exported="" name="utilcode-1.12.5" level="project" />
-    <orderEntry type="library" exported="" name="okio-1.13.0" level="project" />
-    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
-    <orderEntry type="library" exported="" name="circleimageview-2.1.0" level="project" />
-    <orderEntry type="library" exported="" name="okhttp-3.8.1" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="support-media-compat-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="recyclerview-v7-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="rxpermissions-0.9.5" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="support-vector-drawable-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="support-compat-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="animated-vector-drawable-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="okgo-3.0.4" level="project" />
+    <orderEntry type="library" exported="" name="com.github.bumptech.glide:glide:3.6.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="de.hdodenhof:circleimageview-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-core-ui-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="net.qiujuer.genius:blur-2.0.0-beta4" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-compat-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.nineoldandroids:library:2.4.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okhttp3:okhttp:3.8.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.lzy.net:okgo-3.0.4" level="project" />
+    <orderEntry type="library" exported="" name="io.reactivex.rxjava2:rxjava:2.0.3@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-core-utils-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.7@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okio:okio:1.13.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-v4-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:renderscript:25.0.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.tbruyelle.rxpermissions2:rxpermissions-0.9.5" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-fragment-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="me.iwf.photopicker:PhotoPicker-0.1.8" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-media-compat-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="io.reactivex.rxjava2:rxandroid-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:transition-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:design-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.jaeger.statusbarutil:library-1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="org.reactivestreams:reactive-streams:1.0.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.just.agentweb:agentweb-4.0.0-alpha-3" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.picasso:picasso:2.5.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="cn.jiguang.sdk:jcore-1.1.9" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-vector-drawable-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:recyclerview-v7-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="me.majiajie:pager-bottom-tab-strip-2.2.5" level="project" />
+    <orderEntry type="library" exported="" name="com.android.support:support-annotations:25.3.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="cn.jiguang.sdk:jpush-3.1.1" level="project" />
+    <orderEntry type="library" exported="" name="com.blankj:utilcode-1.12.5" level="project" />
     <orderEntry type="module" module-name="patternlockview" exported="" />
     <orderEntry type="module" module-name="patternlockview-reactive" exported="" />
-    <orderEntry type="library" exported="" name="android-android-25" level="project" />
-    <orderEntry type="library" exported="" name="support-compat-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-media-compat-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-core-ui-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-core-utils-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-fragment-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="animated-vector-drawable-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="support-vector-drawable-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="rxandroid-2.0.0" level="project" />
-    <orderEntry type="library" exported="" name="rxjava-2.0.2" level="project" />
   </component>
 </module>

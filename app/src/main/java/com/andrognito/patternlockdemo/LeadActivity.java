@@ -35,7 +35,7 @@ public class LeadActivity extends BaseActivity {
                 startActivity(intent);
 
             } else {
-                Intent intent = new Intent(LeadActivity.this, LanucherActivity.class);
+                Intent intent = new Intent(LeadActivity.this, MainAc.class);
                 startActivity(intent);
 
             }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="header">#4169E1</color>
 
@@ -15,4 +14,5 @@
     <color name="shop_background">#B30004</color>
     <color name="shop_Header_background">#F2F2F2</color>
     <color name="shop_Service_background">#FFFAF4</color>
+    <color name="status_bar">#EF5350</color>
 </resources>

@@ -9,17 +9,17 @@ package com.just.agentweb;
 public final class R {
     public static final class color {
         public static final int black = 0x7f0d000c;
-        public static final int select_color = 0x7f0d0054;
+        public static final int select_color = 0x7f0d0053;
         public static final int white = 0x7f0d0060;
     }
     public static final class id {
         public static final int agentweb_webview_id = 0x7f0e0004;
-        public static final int mainframe_error_container_id = 0x7f0e0007;
-        public static final int mainframe_error_viewsub_id = 0x7f0e0008;
-        public static final int web_parent_layout_id = 0x7f0e0014;
+        public static final int mainframe_error_container_id = 0x7f0e0008;
+        public static final int mainframe_error_viewsub_id = 0x7f0e0009;
+        public static final int web_parent_layout_id = 0x7f0e0015;
     }
     public static final class layout {
-        public static final int agentweb_error_page = 0x7f040021;
+        public static final int agentweb_error_page = 0x7f040023;
     }
     public static final class string {
         public static final int app_name = 0x7f080043;

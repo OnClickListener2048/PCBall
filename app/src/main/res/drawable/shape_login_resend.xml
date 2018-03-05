@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners
+        android:bottomLeftRadius="@dimen/d3"
+        android:bottomRightRadius="@dimen/d3"
+        android:radius="@dimen/d3"
+        android:topLeftRadius="@dimen/d3"
+        android:topRightRadius="@dimen/d3" />
+
+    <stroke android:color="@color/status_bar" android:width="@dimen/d0.5" />
+
+</shape>

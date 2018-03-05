@@ -24,7 +24,7 @@ android {
 
         manifestPlaceholders = [
                 JPUSH_PKGNAME : applicationId,
-                JPUSH_APPKEY : "40440a555b60792f220281a7", //JPush上注册的包名对应的appkey.
+                JPUSH_APPKEY : "7be2996e684ae9553c62a0df", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
         ]
 
@@ -54,9 +54,13 @@ dependencies {
     compile 'net.qiujuer.genius:blur:2.0.0-beta4'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.blankj:utilcode:1.12.5'
+    compile 'com.airbnb.android:lottie:2.0.0'
     compile 'com.lzy.net:okgo:3.0.4'
     compile 'me.majiajie:pager-bottom-tab-strip:2.2.5'
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     compile 'com.just.agentweb:agentweb:4.0.0-alpha-3'
+    compile 'com.jakewharton:butterknife:8.8.1'
     compile 'com.google.code.gson:gson:2.2.4'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
 }

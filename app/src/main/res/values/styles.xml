@@ -9,7 +9,7 @@
     </style>
 
     <style name="lead" parent="AppTheme">
-        <item name="android:windowBackground">@mipmap/lead</item>
+        <item name="android:windowBackground">@mipmap/lead2</item>
     </style>
 
 

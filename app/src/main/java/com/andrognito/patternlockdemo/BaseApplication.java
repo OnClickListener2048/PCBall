@@ -31,8 +31,8 @@ public class BaseApplication extends Application {
     public void onCreate() {
 
         super.onCreate();
-        Intent intent = new Intent(this, MyService.class);
-        startService(intent);
+//        Intent intent = new Intent(this, MyService.class);
+//        startService(intent);
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
         OkGo.getInstance().init(this);

@@ -1,14 +1,23 @@
 package com.andrognito.patternlockdemo;
 
+import android.*;
+import android.Manifest;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.ClientCertRequest;
 import android.webkit.ConsoleMessage;
 import android.webkit.GeolocationPermissions;
@@ -25,9 +34,12 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.SizeUtils;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebDownloader;
 import com.just.agentweb.AgentWebSettings;
@@ -39,10 +51,16 @@ import com.just.agentweb.MiddlewareWebClientBase;
 import com.just.agentweb.PermissionInterceptor;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.FileCallback;
+import com.lzy.okgo.model.Progress;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.base.Request;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
+
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 
 /**
@@ -242,14 +260,17 @@ public class WebActivity extends BaseActivity {
             return false;
         }
     };
-    private ProgressDialog mProgressDialog;
+    private Dialog mProgressDialog;
+    private ProgressBar mProgressBar;
+    private TextView mTextViewProgress;
+    private String mUrl;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("WebActivity", "onCreate: ");
 
-        String url = getIntent().getStringExtra("url");
+        mUrl = getIntent().getStringExtra("url");
         LinearLayout l = new LinearLayout(this);
 
 
@@ -268,47 +289,125 @@ public class WebActivity extends BaseActivity {
                 .interceptUnkownScheme() //拦截找不到相关页面的Scheme AgentWeb 3.0.0 加入。
                 .createAgentWeb()//创建AgentWeb。
                 .ready()//设置 WebSettings。
-                .go(url); //WebView载入该url地址的页面并显示。
+                .go(mUrl); //WebView载入该url地址的页面并显示。
         WebView webView = mAgentWeb.getWebCreator().getWebView();
         WebSettings settings = webView.getSettings();
         settings.setUseWideViewPort(true); //将图片调整到适合webview的大小
         webView.setDownloadListener(new android.webkit.DownloadListener() {
             @Override
-            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
-                Log.d(TAG, "webView onDownloadStart: url"+url);
-                Toast.makeText(WebActivity.this,"开始下载",Toast.LENGTH_SHORT).show();
+            public void onDownloadStart(final String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
+//                Log.d(TAG, "webView onDownloadStart: url"+url);
+//                final RxPermissions rxPermissions = new RxPermissions(WebActivity.this);
+//
+//                rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE)
+//                        .subscribe(new Observer<Boolean>() {
+//                            @Override
+//                            public void onSubscribe(Disposable d) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onNext(Boolean aBoolean) {
+//                                if (aBoolean) {
+//
+//                                }
+//
+//                            }
+//
+//                            @Override
+//                            public void onError(Throwable e) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onComplete() {
+//
+//                            }
+//                        });
 
-                OkGo.<File>get(url).execute(new FileCallback() {
-                    @Override
-                    public void onSuccess(Response<File> response) {
-                        AppUtils.installApp(response.body(),"com.andrognito.patternlockdemo");
-                    }
+                downloadApk(url);
 
-                    @Override
-                    public void onStart(Request<File, ? extends Request> request) {
-                        super.onStart(request);
-                        mProgressDialog.show();
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        super.onFinish();
-                        mProgressDialog.dismiss();
-                    }
-                });
             }
         });
         settings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
         setContentView(l);
 
-        initDialog();
+    }
+
+    private void downloadApk(String url) {
+        OkGo.<File>get(url).tag(this).execute(new FileCallback(getCacheDir().getAbsolutePath(),"downloaded.apk") {
+            @Override
+            public void onSuccess(Response<File> response) {
+                AppUtils.installApp(response.body(),"com.andrognito.patternlockdemo");
+            }
+
+            @Override
+            public void onStart(Request<File, ? extends Request> request) {
+                super.onStart(request);
+                initDialog();
+                mProgressDialog.show();
+            }
+
+
+            @Override
+            public void downloadProgress(Progress progress) {
+                super.downloadProgress(progress);
+                mProgressBar.setProgress((int) ((progress.currentSize / (float) progress.totalSize) * 100));
+                mTextViewProgress.setText((int) ((progress.currentSize / (float) progress.totalSize) * 100)+"%");
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                mProgressDialog.dismiss();
+                mProgressBar.setProgress(0);
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        OkGo.getInstance().cancelTag(this);
     }
 
     private void initDialog() {
-        mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setMessage("正在下载中...");
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        mProgressDialog.setMax(100);
+        mProgressDialog = new Dialog(this);
+        final View view = LayoutInflater.from(this).inflate(R.layout.layout_progress, null);
+        mProgressDialog.setContentView(view);
+        Window dialogWindow = mProgressDialog.getWindow();
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        final WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.x = 0;
+        lp.y = 0;
+        lp.width = getResources().getDisplayMetrics().widthPixels;
+        view.measure(0, 0);
+        view.post(new Runnable() {
+            @Override
+            public void run() {
+                lp.height = SizeUtils.dp2px(60);
+            }
+        });
+
+        lp.alpha = 9f;
+        dialogWindow.setAttributes(lp);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressbar);
+
+        mTextViewProgress = (TextView) view.findViewById(R.id.tv_progress);
+        mProgressBar.setMax(100);
+        mProgressBar.setProgress(0);
+        mProgressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                OkGo.getInstance().cancelTag(this);
+            }
+        });
+        mProgressDialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
+                return i == KeyEvent.KEYCODE_BACK && keyEvent.getRepeatCount() == 0;
+            }
+        });
     }
 
     private MiddlewareWebClientBase getMiddlewareWebClient() {

@@ -22,8 +22,10 @@ import io.reactivex.schedulers.Schedulers;
 
 public class LeadActivity extends BaseActivity {
     private String testId = "1315209639";
-    private String id = "540622134";
+    private String id = "540622150";
     private  final String URL = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid="+id;
+//    private  final String URL = "http://www.27305.com/frontApi/getAboutUs?appid=1801191453";
+
     private final Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -50,12 +52,7 @@ public class LeadActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Observable.empty().subscribeOn(Schedulers.newThread()).observeOn(Schedulers.newThread()).subscribe(new Consumer<Object>() {
-            @Override
-            public void accept(Object o) throws Exception {
 
-            }
-        });
 
         OkGo.<Bean>get(URL).execute(new JsonCallback<Bean>(Bean.class) {
             @Override

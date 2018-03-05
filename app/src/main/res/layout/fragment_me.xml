@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/status_bar"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <FrameLayout
+                android:id="@+id/fl_notification"
+                android:layout_width="@dimen/d48"
+                android:layout_height="@dimen/d48"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+                <ImageView
+                    android:layout_width="@dimen/d20"
+                    android:layout_height="@dimen/d20"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/d10"
+                    android:src="@mipmap/notification_w" />
+
+                <ImageView
+                    android:id="@+id/red_new_dot"
+                    android:layout_width="@dimen/d10"
+                    android:layout_height="@dimen/d10"
+                    android:layout_gravity="top|right"
+                    android:layout_margin="@dimen/d15"
+                    android:src="@mipmap/dot_notification"
+                    android:visibility="gone"
+                    />
+            </FrameLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d10"
+            >
+            <FrameLayout
+                android:id="@+id/fl_img_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="32dp">
+
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tv_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_toEndOf="@+id/fl_img_head"
+                android:paddingBottom="@dimen/d5"
+                android:paddingLeft="@dimen/d8"
+                android:paddingRight="@dimen/d8"
+                android:paddingTop="@dimen/d5"
+                android:text="无名的群众"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_userName"
+                android:layout_toEndOf="@+id/fl_img_head"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_creditRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d10"
+                    android:drawablePadding="@dimen/d10"
+                    android:paddingBottom="@dimen/d5"
+                    android:paddingLeft="@dimen/d8"
+                    android:paddingRight="@dimen/d8"
+                    android:paddingTop="@dimen/d5"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:drawableLeft="@mipmap/my_wallet"
+                    android:drawablePadding="@dimen/d15"
+                    android:drawableRight="@mipmap/enter_gray"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/d18"
+                    android:text="登录"
+                    android:textSize="13sp"/>
+
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:background="#ededed" />
+
+            <TextView
+                android:id="@+id/helper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/feedback"
+                android:drawablePadding="@dimen/d15"
+                android:drawableRight="@mipmap/enter_gray"
+                android:gravity="center_vertical"
+                android:padding="@dimen/d18"
+                android:text="帮助"
+                android:textSize="13sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:background="#ededed" />
+
+            <TextView
+                android:id="@+id/cleardata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/encyclopedia"
+                android:drawablePadding="@dimen/d15"
+                android:drawableRight="@mipmap/enter_gray"
+                android:gravity="center_vertical"
+                android:padding="@dimen/d18"
+                android:text="清除缓存"
+                android:textSize="13sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:background="#ededed" />
+
+            <TextView
+                android:id="@+id/caipiaochangshi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/help_center"
+                android:drawablePadding="@dimen/d15"
+                android:drawableRight="@mipmap/enter_gray"
+                android:gravity="center_vertical"
+                android:padding="@dimen/d18"
+                android:text="彩票常识"
+                android:textSize="13sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:background="#ededed" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

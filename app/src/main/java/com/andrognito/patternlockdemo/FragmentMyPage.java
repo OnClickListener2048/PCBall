@@ -132,7 +132,7 @@ public class FragmentMyPage extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 2&&resultCode == RESULT_OK) {
-            mTvUserName.setText("138****8888");
+            mTvUserName.setText(data.getStringExtra("phone"));
         }
     }
 }

@@ -172,18 +172,18 @@ public class FragmentWeb extends Fragment {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             Log.d(TAG, "onPageFinished: ");
-            if (mProgressDIalogFragment!= null) {
-                mProgressDIalogFragment.dismissAllowingStateLoss();
-            }
+//            if (mProgressDIalogFragment!= null) {
+//                mProgressDIalogFragment.dismissAllowingStateLoss();
+//            }
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
             Log.d(TAG, "onPageStarted: ");
-            if (!mProgressDIalogFragment.isAdded()) {
-                mProgressDIalogFragment.show(getActivity().getSupportFragmentManager(),"web");
-            }
+//            if (!mProgressDIalogFragment.isAdded()) {
+//                mProgressDIalogFragment.show(getActivity().getSupportFragmentManager(),"web");
+//            }
         }
 
         @Override
@@ -221,7 +221,7 @@ public class FragmentWeb extends Fragment {
             return super.shouldInterceptRequest(view, request);
         }
     };
-    private ProgressDIalogFragment mProgressDIalogFragment;
+//    private ProgressDIalogFragment mProgressDIalogFragment;
 
     public static FragmentWeb newInstance(Bundle bundle) {
         FragmentWeb fragmentWeb = new FragmentWeb();
@@ -254,7 +254,7 @@ public class FragmentWeb extends Fragment {
 
         settings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
 
-        mProgressDIalogFragment = ProgressDIalogFragment.newInstance();
+//        mProgressDIalogFragment = ProgressDIalogFragment.newInstance();
 
         return l;
     }

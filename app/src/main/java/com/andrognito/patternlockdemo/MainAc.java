@@ -55,9 +55,9 @@ public class MainAc extends BaseActivity {
         PageNavigationView pageNavigationView = (PageNavigationView) findViewById(R.id.bottom_tab);
         final NavigationController navigationController = pageNavigationView.material()
                 .addItem(R.drawable.ic_airport_shuttle_black_24dp, "500彩票网")
-                .addItem(R.drawable.ic_location_city_black_24dp, "网易彩票")
-                .addItem(R.drawable.ic_event_note_black_24dp, "好彩票")
-                .addItem(R.drawable.ic_account_circle_black_24dp,"个人中心")
+                .addItem(R.drawable.ic_business_black_24dp, "网易彩票")
+                .addItem(R.drawable.ic_verified_user_black_24dp, "好彩票")
+                .addItem(R.drawable.ic_person_black_24dp,"个人中心")
                 .build();
         navigationController.setSelect(0);
         navigationController.addTabItemSelectedListener(new OnTabItemSelectedListener() {

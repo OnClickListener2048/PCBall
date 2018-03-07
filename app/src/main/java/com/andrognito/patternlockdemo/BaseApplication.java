@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.lzy.okgo.OkGo;
+import com.mob.MobSDK;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,8 @@ public class BaseApplication extends Application {
         JPushInterface.init(this);
         OkGo.getInstance().init(this);
         com.blankj.utilcode.util.Utils.init(this);
+
+        MobSDK.init(this);
     }
 
     public void add(BaseActivity baseActivity) {
